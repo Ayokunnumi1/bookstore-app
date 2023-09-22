@@ -24,7 +24,7 @@ const Books = () => {
   ];
   return (
     <div>
-      <BookList key={booksArray.id} booksProps={booksArray} />
+      <BookList booksProps={booksArray} />
       <h3>ADD NEW BOOK</h3>
       <FormInput />
     </div>
