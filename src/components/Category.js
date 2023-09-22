@@ -1,5 +1,5 @@
 const Category = () => (
-  <h2>Happy Category</h2>
+  <h2>Under Construction</h2>
 );
 
 export default Category;
