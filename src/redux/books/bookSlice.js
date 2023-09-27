@@ -8,10 +8,10 @@ const bookSlice = createSlice({
   initialState,
   reducers: {
     addedBook: (state, action) => {
-      state.numOfBooks += action.payload;
+      state.numOfBooks.push(action.payload);
     },
-    removedBook: (state) => {
-      state.numOfBooks -= 1;
+    removedBook: (state, action) => {
+      state.numOfBooks = state.numOfBooks.filter((book) => book.id !== action.payload);
     },
   },
 });
