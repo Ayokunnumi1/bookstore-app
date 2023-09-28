@@ -27,7 +27,7 @@
   - [Install](#install)
   - [Usage](#usage)
   - [Run tests](#run-tests)
-  - [Deployment](#deployment)
+  
 - [👥 Authors](#authors)
 - [🔭 Future Features](#future-features)
 - [🤝 Contributing](#contributing)
@@ -122,7 +122,7 @@ npm run test
 
 <!-- ## 🚀 Live Demo <a name="live-demo"></a>
 
-- [Live Demo Link](https://ayo-on-code-calculator-s4tm.onrender.com) -->
+- [Live Demo Link]() -->
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 

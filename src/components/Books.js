@@ -1,32 +1,20 @@
+import { useSelector, useDispatch } from 'react-redux';
+import { addedBook } from '../redux/books/bookSlice';
 import FormInput from './InputBook';
 import BookList from './BookList';
 
 const Books = () => {
-  const booksArray = [
-    {
-      id: 1,
-      title: 'The Hunger Games',
-      author: 'Suzanne Collins',
-      completed: false,
-    },
-    {
-      id: 2,
-      title: 'Dune',
-      author: 'Frank Herbert',
-      completed: false,
-    },
-    {
-      id: 3,
-      title: 'Capital in the Twenty-First Century',
-      author: 'Suzanne Collins',
-      completed: false,
-    },
-  ];
+  const booksArray = useSelector((state) => state.books.numOfBooks);
+  const dispatch = useDispatch();
+  const handleUserInput = (title, author) => {
+    dispatch(addedBook({ title, author }));
+  };
+
   return (
     <div>
       <BookList booksProps={booksArray} />
       <h3>ADD NEW BOOK</h3>
-      <FormInput />
+      <FormInput handleUserInput={handleUserInput} />
     </div>
   );
 };
