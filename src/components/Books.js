@@ -6,7 +6,6 @@ import BookList from './BookList';
 const Books = () => {
   const booksArray = useSelector((state) => state.books.numOfBooks);
   const dispatch = useDispatch();
-  console.log(booksArray);
   const handleUserInput = (title, author) => {
     dispatch(addedBook({ title, author }));
   };
