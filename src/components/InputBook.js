@@ -1,12 +1,27 @@
-const FormInput = () => (
-  <form className="form-input">
-    <input type="text" placeholder="Book title" />
+import PropTypes from 'prop-types';
 
-    <input type="text" placeholder="author" />
+const FormInput = ({ handleUserInput }) => {
+  const handleSubmit = (e) => {
+    e.preventDefault();
+    const title = e.target.elements.title.value;
+    const author = e.target.elements.author.value;
+    handleUserInput(title, author);
+  };
 
-    <button type="submit">Add Book</button>
+  return (
+    <form onSubmit={handleSubmit} className="form-input">
+      <input type="text" name="title" placeholder="Book title" />
 
-  </form>
-);
+      <input type="text" name="author" placeholder="author" />
+
+      <button type="submit">Add Book</button>
+
+    </form>
+  );
+};
+
+FormInput.propTypes = {
+  handleUserInput: PropTypes.func.isRequired,
+};
 
 export default FormInput;
