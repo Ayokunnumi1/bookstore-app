@@ -1,45 +1,73 @@
-import { createSlice } from '@reduxjs/toolkit';
-import { v4 as uuidv4 } from 'uuid';
+import { createAsyncThunk, createSlice } from '@reduxjs/toolkit';
+import axios from 'axios';
 
 const initialState = {
-  numOfBooks:
-[
-  {
-    id: uuidv4(),
-    title: 'The Great Gatsby',
-    author: 'John Smith',
-    category: 'Fiction',
-  },
-  {
-    id: uuidv4(),
-    title: 'Anna Karenina',
-    author: 'Leo Tolstoy',
-    category: 'Fiction',
-  },
-  {
-    id: uuidv4(),
-    title: 'The Selfish Gene',
-    author: 'Richard Dawkins',
-    category: 'Nonfiction',
-  },
-],
+  books: [],
+  loading: false,
+  error: '',
 };
-const bookSlice = createSlice({
+const appId = 'xEU2P3EW7ZDOC4O4U6Sh';
+const url = `https://us-central1-bookstore-api-e63c8.cloudfunctions.net/bookstoreApi/apps/${appId}`;
+export const addBookToServer = createAsyncThunk('books/addToServer', async (obj, { rejectWithValue }) => {
+  try {
+    await axios.post(`${url}/books`, obj);
+    return obj;
+  } catch (error) {
+    return rejectWithValue(error.message);
+  }
+});
+export const getBookFromServer = createAsyncThunk('books/getFromServer', async () => {
+  try {
+    const response = await axios.get(`${url}/books`);
+    const { data } = response;
+    return Object.entries(data).map((book) => {
+      const [id] = book;
+      book[1][0].item_id = id;
+      return book[1][0];
+    });
+  } catch (error) {
+    return error;
+  }
+});
+export const deleteBookFromServer = createAsyncThunk('books/deleteFromServer', async (obj) => {
+  const { item_id: id } = obj;
+  try {
+    await axios.delete(`${url}/books/${id}`, {
+      data: obj,
+      headers: {
+        'Content-Type': 'application/json',
+      },
+    });
+    return id;
+  } catch (error) {
+    return error;
+  }
+});
+const booksSlice = createSlice({
   name: 'books',
   initialState,
-  reducers: {
-    addedBook: (state, action) => {
-      const { title, author } = action.payload;
-      const id = uuidv4();
-      state.numOfBooks.push({ id, title, author });
-    },
-    removedBook: (state, action) => {
-      const id = action.payload;
-      state.numOfBooks = state.numOfBooks.filter((book) => book.id !== id);
-    },
-
+  reducers: {},
+  extraReducers: (builder) => {
+    builder
+      .addCase(getBookFromServer.pending, (state) => {
+        state.loading = true;
+      })
+      .addCase(getBookFromServer.fulfilled, (state, action) => {
+        state.loading = false;
+        state.books = action.payload;
+      })
+      .addCase(getBookFromServer.rejected, (state, action) => {
+        state.loading = false;
+        state.error = action.payload;
+      })
+      .addCase(addBookToServer.fulfilled, (state, action) => {
+        state.books.push(action.payload);
+      })
+      .addCase(deleteBookFromServer.fulfilled, (state, action) => {
+        const id = action.payload;
+        state.books = state.books.filter((book) => book.item_id !== id);
+      });
   },
 });
 
-export default bookSlice.reducer;
-export const { addedBook, removedBook } = bookSlice.actions;
+export default booksSlice.reducer;
