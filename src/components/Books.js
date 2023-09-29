@@ -1,20 +1,24 @@
-import { useSelector, useDispatch } from 'react-redux';
-import { addedBook } from '../redux/books/bookSlice';
+import { useEffect } from 'react';
+
+import { useDispatch, useSelector } from 'react-redux';
 import FormInput from './InputBook';
+import { getBookFromServer } from '../redux/books/bookSlice';
 import BookList from './BookList';
 
 const Books = () => {
-  const booksArray = useSelector((state) => state.books.numOfBooks);
+  const { loading, error } = useSelector((state) => state.books);
   const dispatch = useDispatch();
-  const handleUserInput = (title, author) => {
-    dispatch(addedBook({ title, author }));
-  };
+  useEffect(() => {
+    dispatch(getBookFromServer());
+  }, [dispatch]);
 
   return (
     <div>
-      <BookList booksProps={booksArray} />
+      {loading && <p>Loading</p>}
+      {error && <p>Error</p>}
+      {!loading && <BookList />}
       <h3>ADD NEW BOOK</h3>
-      <FormInput handleUserInput={handleUserInput} />
+      <FormInput />
     </div>
   );
 };
