@@ -3,13 +3,67 @@
   flex-direction: row;
   justify-content: space-between;
   align-items: center;
-  padding: 0 80px;
+  padding: 10px;
+  background-color: #ffffff;
+  /* width: 80%; */
+}
+
+.navbar-content {
+  display: flex;
+  flex-direction: row;
 }
 
 .navbar-links {
   display: flex;
   flex-direction: row;
-  gap: 20px;
+  gap: 10px;
   list-style: none;
   font-size: 25px;
+}
+
+h1 {
+  font-family: Montserrat;
+    font-size: 1.875rem;
+    font-weight: bold;
+    font-stretch: normal;
+    font-style: normal;
+    line-height: normal;
+    letter-spacing: normal;
+    color: #0290ff;
+}
+
+.books-link,
+.category-link {
+  font-family: Montserrat;
+    font-size: 0.813rem;
+    font-weight: normal;
+    font-stretch: normal;
+    font-style: normal;
+    line-height: normal;
+    letter-spacing: 1.9px;
+    color: #121212;
+    text-decoration: none;
+}
+
+.categories {
+  opacity: 0.5;
+}
+
+.user {
+  width: 3rem;
+  height: 3rem;
+  background-image: url(../assets/user.png);
+  background-size: cover;
+  background-repeat: no-repeat;
+  border: 1px solid #e8e8e8;
+  -moz-border-radius: 190px;
+    -webkit-border-radius: 190px;
+    border-radius: 50%;
+    cursor: pointer;
+}
+
+@media screen and (min-width: 600px){
+   .navbar-container {
+    padding: 0 80px;
+   }
 }

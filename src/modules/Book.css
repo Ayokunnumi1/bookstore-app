@@ -1,0 +1,19 @@
+.books-display {
+    border: 3px solid green;
+    /* display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 90%; */
+}
+
+.books-display-container {
+    display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+}
+
+h3 {
+    text-align: left;
+}

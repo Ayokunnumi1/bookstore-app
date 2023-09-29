@@ -1,4 +1,5 @@
 import { useEffect } from 'react';
+import '../modules/Book.css';
 
 import { useDispatch, useSelector } from 'react-redux';
 import FormInput from './InputBook';
@@ -13,12 +14,14 @@ const Books = () => {
   }, [dispatch]);
 
   return (
-    <div>
-      {loading && <p>Loading</p>}
-      {error && <p>Error</p>}
-      {!loading && <BookList />}
-      <h3>ADD NEW BOOK</h3>
-      <FormInput />
+    <div className="books-display-container">
+      <div className="books-display">
+        {loading && <p>Loading</p>}
+        {error && <p>Error</p>}
+        {!loading && <BookList />}
+        <h3>ADD NEW BOOK</h3>
+        <FormInput />
+      </div>
     </div>
   );
 };

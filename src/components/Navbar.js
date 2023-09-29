@@ -3,17 +3,18 @@ import '../modules/Navbar.css';
 
 const NavBar = () => (
   <div className="navbar-container">
-    <h1>BookStore CMS</h1>
-    <nav>
+    <nav className="navbar-content">
+      <h1>BookStore CMS</h1>
       <ul className="navbar-links">
         <li>
-          <Link to="/">Books</Link>
+          <Link className="books-link" to="/">BOOKS</Link>
         </li>
         <li>
-          <Link to="/Category">Category</Link>
+          <Link className="category-link categories" to="/Category">CATEGORIES</Link>
         </li>
       </ul>
     </nav>
+    <div className="user" />
   </div>
 );
 

@@ -2,6 +2,7 @@ import { useState } from 'react';
 import { useDispatch } from 'react-redux';
 import { nanoid } from '@reduxjs/toolkit';
 import { addBookToServer } from '../redux/books/bookSlice';
+import '../modules/FormInput.css';
 
 const FormInput = () => {
   const [formData, setFormData] = useState({
@@ -30,7 +31,7 @@ const FormInput = () => {
     }
   };
   return (
-    <form action="">
+    <form action="" className="form-input">
       <input type="text" name="title" placeholder="Book title" className="" value={formData.title} onChange={handleInputChange} />
       <input type="text" name="author" placeholder="author" className="" value={formData.author} onChange={handleInputChange} />
       <button type="submit" className="" onClick={handleSubmit}>ADD BOOK</button>
