@@ -36,8 +36,6 @@ const BookItem = ({ bookListProp }) => {
           <p className="category">{capitalizeFirstLetter(bookListProp.category)}</p>
           <p className="book-title">{bookListProp.title}</p>
           <p className="book-author">{bookListProp.author}</p>
-          {/* <div><button onClick={() => handleDeleteBook(bookListProp.item_id)}
-           type="submit">Delete</button></div> */}
           <nav className="list-actions">
             <button type="button">Comments</button>
             <span>|</span>
@@ -47,21 +45,11 @@ const BookItem = ({ bookListProp }) => {
           </nav>
         </div>
         <div className="right-section">
-          <div className="progess-container">
-            <div className="progress-sign">
-              <span className="title timer" data-from="0" data-to="85" data-speed="1800" />
-              <div className="overlay" />
-              <div className="left" />
-              <div className="right" />
-            </div>
-            <div className="progress">
-              <span className="progress-percent">
-                {/* Display '0%' if progress is missing */}
-                {/* {book.progress || '90%'}
-                  {' '} */}
-                {progress}
-              </span>
-              <span className="progress-completed">Completed</span>
+          <div className="progressed-container">
+            <div className="progress" />
+            <div className="progress-stat">
+              <p className="percent-complete">64%</p>
+              <p className="completed-complete">Completed</p>
             </div>
           </div>
           <span className="div" />

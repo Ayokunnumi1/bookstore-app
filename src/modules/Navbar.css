@@ -3,15 +3,15 @@
   flex-direction: row;
   justify-content: space-between;
   align-items: center;
-  padding: 10px;
+  padding: 80px;
   background-color: #fff;
-
-  /* width: 80%; */
 }
 
 .navbar-content {
   display: flex;
   flex-direction: row;
+  padding: 30px 0;
+  gap: 30px;
 }
 
 .navbar-links {

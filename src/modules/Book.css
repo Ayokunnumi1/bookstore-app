@@ -1,27 +1,17 @@
 .books-display {
-    /* border: 3px solid green; */
-
-    /* width: 90%; */
-
-    /* display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center; */
-    width: 90%;
-    padding: 0;
+  width: 90%;
+  padding: 0;
 }
 
 .books-display-container {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    /* border: 3px solid yellow; */
-    padding-top: 50px;
-    padding-bottom: 200px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding-top: 50px;
+  padding-bottom: 200px;
 }
 
 .form-input-main-container {
-    margin-top: 50px;
+  margin-top: 50px;
 }
-    

@@ -8,13 +8,9 @@ body {
 
 .main-container {
   width: 90%;
-  height: 70%;
-
-  /* margin: 50px; */
   border-radius: 4px;
   box-shadow: 0 0 60px 0 rgba(0, 0, 0, 0.05);
-  background-color: #fafafa;
-  /* border: 3px solid red; */
+  background-color: rgba(244, 237, 228, 0.2);
 }
 
 .App {

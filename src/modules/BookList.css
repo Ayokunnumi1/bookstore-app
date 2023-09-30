@@ -1,7 +1,6 @@
 .booklist-container {
-    /* display: flex;
-    flex-direction: column;
-    justify-content: center; */
-    /* border: 3px solid yellow; */
-    padding: 0;
+  display: grid;
+  gap: 2rem;
+  padding: 0;
+  background-color: whitesmoke;
 }
