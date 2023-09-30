@@ -24,12 +24,18 @@ const BookItem = ({ bookListProp }) => {
   const handleDeleteBook = (id) => {
     dispatch(deleteBookFromServer({ item_id: id }));
   };
+
+  const capitalizeFirstLetter = (str) => {
+    if (!str) return '';
+    return str.charAt(0).toUpperCase() + str.slice(1);
+  };
   return (
     <li className="list-container">
       <div className="list-block">
         <div className="left-section">
-          <p>{bookListProp.title}</p>
-          <p>{bookListProp.author}</p>
+          <p className="category">{capitalizeFirstLetter(bookListProp.category)}</p>
+          <p className="book-title">{bookListProp.title}</p>
+          <p className="book-author">{bookListProp.author}</p>
           {/* <div><button onClick={() => handleDeleteBook(bookListProp.item_id)}
            type="submit">Delete</button></div> */}
           <nav className="list-actions">
@@ -81,6 +87,7 @@ BookItem.propTypes = {
     author: PropTypes.string,
     item_id: PropTypes.number,
     currentChapter: PropTypes.string,
+    category: PropTypes.string,
   }).isRequired,
 };
 

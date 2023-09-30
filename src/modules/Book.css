@@ -1,5 +1,5 @@
 .books-display {
-    border: 3px solid green;
+    /* border: 3px solid green; */
 
     /* width: 90%; */
 
@@ -16,7 +16,7 @@
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    border: 3px solid yellow;
+    /* border: 3px solid yellow; */
     padding-top: 50px;
     padding-bottom: 200px;
 }
