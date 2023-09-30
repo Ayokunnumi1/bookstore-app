@@ -19,8 +19,10 @@ const Books = () => {
         {loading && <p>Loading</p>}
         {error && <p>Error</p>}
         {!loading && <BookList />}
-        <h3>ADD NEW BOOK</h3>
-        <FormInput />
+        <div className="form-input-main-container">
+          <h3>ADD NEW BOOK</h3>
+          <FormInput />
+        </div>
       </div>
     </div>
   );
