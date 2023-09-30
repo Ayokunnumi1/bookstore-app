@@ -22,7 +22,7 @@ const FormInput = () => {
     const { title, author } = formData;
     if (title && author) {
       dispatch(addBookToServer({
-        item_id: nanoid(), title, author, category: 'fiction',
+        item_id: nanoid(), title, author, category: 'Science fiction',
       }));
       setFormData({
         title: '',

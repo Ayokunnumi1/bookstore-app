@@ -20,7 +20,7 @@ const Books = () => {
         {error && <p>Error</p>}
         {!loading && <BookList />}
         <div className="form-input-main-container">
-          <h3>ADD NEW BOOK</h3>
+          <h3 className="add-new-book">ADD NEW BOOK</h3>
           <FormInput />
         </div>
       </div>
