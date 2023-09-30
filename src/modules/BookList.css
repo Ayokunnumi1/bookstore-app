@@ -1,0 +1,6 @@
+.booklist-container {
+  display: grid;
+  gap: 2rem;
+  padding: 0;
+  background-color: whitesmoke;
+}

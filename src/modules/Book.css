@@ -1,0 +1,29 @@
+.books-display {
+  width: 90%;
+  padding: 0;
+}
+
+.books-display-container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding-top: 50px;
+  padding-bottom: 200px;
+}
+
+.form-input-main-container {
+  margin-top: 50px;
+}
+
+.add-new-book {
+  font-family: Montserrat, sans-serif;
+  font-size: 1.25rem;
+  font-weight: bold;
+  font-stretch: normal;
+  font-style: normal;
+  line-height: normal;
+  letter-spacing: -0.18px;
+  color: #888;
+  margin-bottom: 20px;
+}

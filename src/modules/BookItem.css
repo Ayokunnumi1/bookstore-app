@@ -1,4 +1,175 @@
-.book-item-container {
+@import url('https://fonts.googleapis.com/css2?family=Roboto+Slab:wght@100;200;300;400;500;600;700;800;900&display=swap');
+
+*,
+*::before,
+*::after {
   list-style: none;
-  border: 3px solid lightgray;
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+.list-block {
+  display: grid;
+  grid-template-columns: 60% 40%;
+  background-color: #fff;
+  padding: 3rem;
+}
+
+.right-section {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.progress {
+  width: 4.25rem;
+  height: 4.25rem;
+  transform: rotate(45deg);
+  border-radius: 50%;
+  border-width: 5px;
+  border-style: solid;
+  border-color: rgb(48, 123, 190) rgb(48, 123, 190) rgb(48, 123, 190) rgb(232, 232, 232);
+}
+
+.progressed-container {
+  display: flex;
+  align-items: center;
+  gap: 1.5rem;
+}
+
+.percent-complete {
+  font-family: Montserrat, sans-serif;
+  font-size: 30px;
+  font-weight: normal;
+  font-stretch: normal;
+  font-style: normal;
+  line-height: normal;
+  letter-spacing: normal;
+  color: #121212;
+}
+
+.completed-complete {
+  font-family: Montserrat, sans-serif;
+  font-size: 0.875rem;
+  font-weight: normal;
+  font-stretch: normal;
+  font-style: normal;
+  line-height: normal;
+  letter-spacing: normal;
+}
+
+.list-actions button {
+  width: 4.563rem;
+  height: 1.188rem;
+  margin: 0.188rem 0.938rem 0.125rem 0;
+  font-size: 0.875rem;
+  font-weight: 300;
+  font-stretch: normal;
+  font-style: normal;
+  line-height: normal;
+  letter-spacing: normal;
+  color: #4386bf;
+  border: none;
+  background-color: #fff;
+  cursor: pointer;
+}
+
+.list-actions span {
+  color: #4386bf;
+}
+
+.category {
+  opacity: 0.5;
+  font-family: Montserrat, sans-serif;
+  font-weight: bold;
+  font-stretch: normal;
+  font-style: normal;
+  line-height: normal;
+  letter-spacing: normal;
+  color: #121212;
+  font-size: 15px;
+}
+
+.book-title,
+.book-author,
+.list-actions button,
+.current-chapter,
+.chapter-number,
+.update-progress {
+  font-family: 'Roboto Slab', serif;
+}
+
+.book-title {
+  width: 100%;
+  margin: 0.188rem 20.188rem 0 0;
+  font-size: 1.375rem;
+  font-weight: bold;
+  font-stretch: normal;
+  font-style: normal;
+  line-height: normal;
+  letter-spacing: -0.2px;
+  color: #121212;
+}
+
+.book-author {
+  margin: 0.25rem 0 0;
+  font-size: 0.875rem;
+  font-weight: 300;
+  font-stretch: normal;
+  font-style: normal;
+  line-height: normal;
+  letter-spacing: normal;
+  color: #4386bf;
+}
+
+.div {
+  width: 0.125rem;
+  height: 4.375rem;
+  margin: 1.125rem 0.1rem 0 3.938rem;
+  border: solid 1px #e8e8e8;
+}
+
+.chapter {
+  margin-left: 0;
+}
+
+.current-chapter {
+  width: 7.875rem;
+  height: 1.125rem;
+  margin: 0.063rem 3.625rem 0 3.688rem;
+  opacity: 0.5;
+  font-size: 0.813rem;
+  font-weight: 300;
+  font-stretch: normal;
+  font-style: normal;
+  line-height: normal;
+  letter-spacing: normal;
+  color: #121212;
+}
+
+.chapter-number {
+  width: 5.688rem;
+  height: 1.313rem;
+  margin: 0.438rem 6.813rem 0.25rem 3.688rem;
+  font-size: 1rem;
+  font-weight: 300;
+  font-stretch: normal;
+  font-style: normal;
+  line-height: normal;
+  letter-spacing: -0.4px;
+  color: #121212;
+}
+
+.update-progress {
+  width: 11.5rem;
+  height: 2.063rem;
+  font-weight: 300;
+  margin: 0.75rem 0 0.563rem 3.688rem;
+  padding: 0.438rem 1.188rem 0.5rem 1.375rem;
+  border-radius: 3px;
+  background-color: #0290ff;
+  border: none;
+  color: #fff;
+  cursor: pointer;
 }
