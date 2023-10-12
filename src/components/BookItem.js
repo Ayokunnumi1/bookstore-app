@@ -1,26 +1,26 @@
 import PropTypes from 'prop-types';
 import '../modules/BookItem.css';
 import { useDispatch } from 'react-redux';
-import { useState, useEffect } from 'react';
+// import { useState, useEffect } from 'react';
 import { deleteBookFromServer } from '../redux/books/bookSlice';
 
 const BookItem = ({ bookListProp }) => {
   const dispatch = useDispatch();
-  const [progress, setProgress] = useState(0);
+  // const [progress, setProgress] = useState(0);
 
-  useEffect(() => {
-    const interval = setInterval(() => {
-      if (progress < 85) {
-        setProgress((prevProgress) => prevProgress + 1);
-      } else {
-        clearInterval(interval);
-      }
-    }, 20);
+  // useEffect(() => {
+  //   const interval = setInterval(() => {
+  //     if (progress < 85) {
+  //       setProgress((prevProgress) => prevProgress + 1);
+  //     } else {
+  //       clearInterval(interval);
+  //     }
+  //   }, 20);
 
-    return () => {
-      clearInterval(interval);
-    };
-  }, [progress]);
+  //   return () => {
+  //     clearInterval(interval);
+  //   };
+  // }, [progress]);
   const handleDeleteBook = (id) => {
     dispatch(deleteBookFromServer({ item_id: id }));
   };
