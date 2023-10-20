@@ -132,6 +132,10 @@
 
 .chapter {
   margin-left: 0;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
 }
 
 .current-chapter {
@@ -151,7 +155,6 @@
 .chapter-number {
   width: 5.688rem;
   height: 1.313rem;
-  margin: 0.438rem 6.813rem 0.25rem 3.688rem;
   font-size: 1rem;
   font-weight: 300;
   font-stretch: normal;
@@ -162,11 +165,10 @@
 }
 
 .update-progress {
-  width: 11.5rem;
   height: 2.063rem;
   font-weight: 300;
-  margin: 0.75rem 0 0.563rem 3.688rem;
-  padding: 0.438rem 1.188rem 0.5rem 1.375rem;
+  margin-top: 20px;
+  padding: 10px;
   border-radius: 3px;
   background-color: #0290ff;
   border: none;
